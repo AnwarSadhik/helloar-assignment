@@ -33,7 +33,7 @@ export default function AddMusicForm({ toggleAddMusic }) {
 
     const isVideoLink = /\.(mp3|mp4)$/i.test(formData.link);
 
-    const isImageLink = /\.(jpeg|jpg|gif|png)$/i.test(formData.thumbnail);
+    const isImageLink = /\.(jpeg|jpg|png)$/i.test(formData.thumbnail);
 
     if (!isVideoLink || !isImageLink) {
       alert("Invalid link or thumbnail format");
@@ -91,9 +91,13 @@ export default function AddMusicForm({ toggleAddMusic }) {
               name="link"
               value={formData.link}
               onChange={handleInputChange}
-              placeholder="Song Link"
+              placeholder="mp3 | mp4 formats supported"
               className="border rounded-md px-3 py-2"
             />
+            <label className="text-xs px-2 cursor-text">
+            Example : 
+            https://aac.saavncdn.com/533/a60f6df409cc9104eaa2a65a1428f38b_48.mp4
+            </label>
             <label className="mb-1">Song Source:</label>
             <input
               type="text"
@@ -108,10 +112,14 @@ export default function AddMusicForm({ toggleAddMusic }) {
               type="text"
               name="thumbnail"
               value={formData.thumbnail}
-              placeholder="Song Thumbail Link"
+              placeholder="jpeg | jpg | png formats supported"
               onChange={handleInputChange}
               className="border rounded-md px-3 py-2"
             />
+            <label className="text-xs px-2 cursor-text">
+              Example:
+              https://c.saavncdn.com/533/UNDERTALE-Soundtrack-Unknown-2015-20200818183620-150x150.jpg
+            </label>
           </div>
           <div className="flex justify-end space-x-4">
             <button
